@@ -1,7 +1,7 @@
 //check button is pressed (if so, it will check WHAT button was pressed)
-for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
-  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-    var buttonInnerHTML = this.innerHTML;
+for (let i = 0; i < document.querySelectorAll(".drum").length; i++) {
+  document.querySelectorAll(".drum")[i].addEventListener("click", function() {
+    let buttonInnerHTML = this.innerHTML;
     makeSound(buttonInnerHTML);
     buttonAnimation(buttonInnerHTML);
   });
@@ -49,7 +49,7 @@ function makeSound(key) {
           let tom4 = new Audio("sounds/tom-4.mp3");
           tom4.play();
           break;
-  
+          
         default:
           console.log(buttonInnerHTML);
           break;
@@ -57,7 +57,7 @@ function makeSound(key) {
 }
 
 function buttonAnimation(currentKey) {
-    var activeButton = document.querySelector("." + currentKey);
+    let activeButton = document.querySelector(`.${currentKey}`);
     activeButton.classList.add("pressed");
     setTimeout(function() {
         activeButton.classList.remove("pressed");
